@@ -1,78 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BitcoinRoulette</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<div class="group_btn">
-        <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button>
-        <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button>
-</div>
-<div class="main">
-<!--    <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button>-->
-<!--    <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button>-->
-    <div class="plate" id="plate">
-        <ul class="inner">
-            <li class="number"><label><input type="radio" name="pit" value="32" /><span class="pit">32</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit">15</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="19" /><span class="pit">19</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="4" /><span class="pit">4</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="21" /><span class="pit">21</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="2" /><span class="pit">2</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="25" /><span class="pit">25</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="17" /><span class="pit">17</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="34" /><span class="pit">34</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="6" /><span class="pit">6</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="27" /><span class="pit">27</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="13" /><span class="pit">13</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="36" /><span class="pit">36</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="11" /><span class="pit">11</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="30" /><span class="pit">30</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="8" /><span class="pit">8</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="23" /><span class="pit">23</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="10" /><span class="pit">10</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="5" /><span class="pit">5</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="24" /><span class="pit">24</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="16" /><span class="pit">16</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="33" /><span class="pit">33</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="1" /><span class="pit">1</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="20" /><span class="pit">20</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="14" /><span class="pit">14</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="31" /><span class="pit">31</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="9" /><span class="pit">9</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="22" /><span class="pit">22</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="18" /><span class="pit">18</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="29" /><span class="pit">29</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="7" /><span class="pit">7</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="28" /><span class="pit">28</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="12" /><span class="pit">12</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="35" /><span class="pit">35</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="3" /><span class="pit">3</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="26" /><span class="pit">26</span></label></li>
-            <li class="number"><label><input type="radio" name="pit" value="0" /><span class="pit">0</span></label></li>
-        </ul>
-        <div class="data">
-            <div class="data-inner">
-                <div class="mask"></div>
-                <div class="result">
-                    <div class="result-number">00</div>
-                    <div class="result-color">red</div>
+<div class="grid_container">
+    <div class="column_left">
+        <div class="box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player 1">
+                    <button type="button" class="btn btn-outline-success ">Click</button>
+                </div>
+            </form>
+        </div>
+        <div class="box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player 2">
+                    <button type="button" class="btn btn-success btn-sm">Click</button>
+                </div>
+            </form>
+        </div>
+        <div class="box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player 3">
+                    <button type="button" class="btn btn-success btn-sm">Click</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="column_center">
+        <div style="margin: 10px auto">
+            <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button>
+            <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button>
+        </div>
+        <div class="center">
+            <div class="main">
+                <div class="plate" id="plate">
+                    <ul class="inner">
+                        <li class="number"><label><input type="radio" name="pit" value="32" /><span
+                                class="pit">32</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="15" /><span
+                                class="pit">15</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="19" /><span
+                                class="pit">19</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="4" /><span
+                                class="pit">4</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="21" /><span
+                                class="pit">21</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="2" /><span
+                                class="pit">2</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="25" /><span
+                                class="pit">25</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="17" /><span
+                                class="pit">17</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="34" /><span
+                                class="pit">34</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="6" /><span
+                                class="pit">6</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="27" /><span
+                                class="pit">27</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="13" /><span
+                                class="pit">13</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="36" /><span
+                                class="pit">36</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="11" /><span
+                                class="pit">11</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="30" /><span
+                                class="pit">30</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="8" /><span
+                                class="pit">8</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="23" /><span
+                                class="pit">23</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="10" /><span
+                                class="pit">10</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="5" /><span
+                                class="pit">5</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="24" /><span
+                                class="pit">24</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="16" /><span
+                                class="pit">16</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="33" /><span
+                                class="pit">33</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="1" /><span
+                                class="pit">1</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="20" /><span
+                                class="pit">20</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="14" /><span
+                                class="pit">14</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="31" /><span
+                                class="pit">31</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="9" /><span
+                                class="pit">9</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="22" /><span
+                                class="pit">22</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="18" /><span
+                                class="pit">18</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="29" /><span
+                                class="pit">29</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="7" /><span
+                                class="pit">7</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="28" /><span
+                                class="pit">28</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="12" /><span
+                                class="pit">12</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="35" /><span
+                                class="pit">35</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="3" /><span
+                                class="pit">3</span></label>
+                        </li>
+                        <li class="number"><label><input type="radio" name="pit" value="26" /><span
+                                class="pit">26</span></label></li>
+                        <li class="number"><label><input type="radio" name="pit" value="0" /><span
+                                class="pit">0</span></label>
+                        </li>
+                    </ul>
+                    <div class="data">
+                        <div class="data-inner">
+                            <div class="mask"></div>
+                            <div class="result">
+                                <div class="result-number">00</div>
+                                <div class="result-color">red</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-<!--    <div class="previous-results">-->
-<!--        <ol class="previous-list">-->
-<!--            <li class='visuallyhidden placeholder'>No results yet.</li>-->
-<!--        </ol>-->
-<!--    </div>-->
-</div>
+    <div class="column_right">
+        <div class="box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player 4">
+                    <button type="button" class="btn btn-success btn-sm">Click</button>
+                </div>
+            </form>
+        </div>
+        <div class="box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player 5">
+                    <button type="button" class="btn btn-success btn-sm">Click</button>
+                </div>
+            </form>
+        </div>
+        <div class="box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player 6">
+                    <button type="button" class="btn btn-success btn-sm">Click</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!-- <div class="previous-results">
+           <ol class="previous-list">
+               <li class='visuallyhidden placeholder'>No results yet.</li>
+           </ol>
+       </div> -->
+</div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
 
 <script src="script.js"></script>
 </body>
-</html>
 
+</html>
